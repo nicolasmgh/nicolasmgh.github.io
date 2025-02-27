@@ -241,10 +241,10 @@
                         menuIcon.innerHTML = `apps`;
                         menuIcon.style.opacity = "1";
                         handleBackBtn("closing");
+                        logo.style.translate = "0px";
                     }, 150);
 
                     setTimeout(() => {
-                        logo.style.translate = "0px";
                         target.classList.remove("menu-open");
                         target.classList.add("menu-closed");
                     }, 300);
