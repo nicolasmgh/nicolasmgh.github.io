@@ -1,8 +1,8 @@
-<html lang="es">
+<htm lang="es">
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>ngh - CIIE Escobar</title>
+        <title>ngh - Precisar</title>
 
         <!-- material icons -->
         <link
@@ -220,157 +220,99 @@
             });
         </script>
 
-        <a id="back" href="#">
-            <span class="material-symbols-outlined icon">
-                arrow_back_ios_new
-            </span>
-            <span class="text">Volver</span>
-        </a>
-        <style>
-            #back {
-                position: absolute;
-                left: 130px;
-                right: 0;
-                top: 140px;
-                font-family: "Plus Jakarta Sans";
-            }
+<section id="project-content">
+    <section class="centered-content">
+        <img
+            src="../../../assets\images\projects_portrait/precisar.jpg"
+            alt=""
+        />
 
-            a {
-                text-decoration: none;
-                color: #555;
-                display: flex;
-                flex-direction: row;
-                align-items: center;
-            }
-            span.icon {
-                margin-right: 10px;
-                padding: 8px;
-                background: #f6f6f6;
-                border-radius: 8px;
-                font-size: 16px;
-                font-variation-settings: "wght" 600;
-                color: #888;
-            }
-            span.text {
-                font-weight: 500;
-                font-size: 16px;
-                color: #555;
-            }
+        <section class="info">
+            <h1>Precisar</h1>
 
-            .dark-mode span.icon {
-                background: #444;
-                color: #fff;
-            }
+            <span class="separator"></span>
 
-            .dark-mode span.text {
-                color: #fff;
-            }
-        </style>
+            <section class="row">
+                <section class="desc">
+                    Precisar es una organización que funciona como
+                    incubadora y asesora para emprendedores y empresas,
+                    brindando acompañamiento en distintas etapas de
+                    desarrollo. El objetivo del proyecto fue crear un
+                    sitio web que reflejara su misión y servicios,
+                    facilitando el acceso a recursos, mentorías y
+                    oportunidades para quienes buscan potenciar sus
+                    proyectos y negocios.
+                </section>
 
-        <script>
-            document.querySelector("#back").addEventListener("click", () => {
-                history.back();
-            });
-        </script>
-
-        <section id="project-content">
-            <section class="centered-content">
-                <img src="/assets\images\projects_portrait/ciie.jpg" alt="" />
-
-                <section class="info">
-                    <h1>CIIE Escobar</h1>
-
-                    <span class="separator"></span>
-
-                    <section class="row">
-                        <section class="desc">
-                            Los Centros de Capacitación, Información e
-                            Investigación Educativa (CIIE) son espacios
-                            dedicados a la formación docente continua a nivel
-                            distrital y regional. El objetivo del proyecto fue
-                            rediseñar el portal existente, enfocándose en
-                            mejorar el acceso a recursos educativos.
-                        </section>
-
-                        <section class="more">
-                            <table>
-                                <tbody>
-                                    <tr>
-                                        <td>CATEGORIA</td>
-                                        <td class="separator"></td>
-                                        <td>Diseño & Desarrollo</td>
-                                    </tr>
-                                    <tr class="separator"></tr>
-                                    <tr>
-                                        <td>AÑO</td>
-                                        <td class="separator"></td>
-                                        <td>2023</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </section>
-                    </section>
+                <section class="more">
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>CATEGORIA</td>
+                                <td class="separator"></td>
+                                <td>Diseño & Desarrollo</td>
+                            </tr>
+                            <tr class="separator"></tr>
+                            <tr>
+                                <td>AÑO</td>
+                                <td class="separator"></td>
+                                <td>2024</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </section>
             </section>
-
-            <section class="gallery">
-                <div class="sticky">
-                    <img src="/assets\images\ciieescobar/image1.jpg" alt="" />
-                    <img src="/assets\images\ciieescobar/image2.jpg" alt="" />
-                    <img src="/assets\images\ciieescobar/image3.jpg" alt="" />
-                    <img src="/assets\images\ciieescobar/image4.jpg" alt="" />
-                    <img src="/assets\images\ciieescobar/image5.jpg" alt="" />
-                </div>
-            </section>
         </section>
+    </section>
 
-        <script>
-            document.addEventListener("DOMContentLoaded", () => {
-                const container = document.querySelector(".sticky");
-                const sections = gsap.utils.toArray(".gallery img");
-
-                let scrollTween = gsap.to(sections, {
-                    xPercent: -100 * (sections.length - 0.85),
-                    scrollTrigger: {
-                        trigger: ".sticky",
-                        pin: true,
-                        scrub: 1,
-                        end: "+=5000",
-                    },
-                });
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const container = document.querySelector(".sticky");
+            const sections = gsap.utils.toArray(".gallery img");
+    
+            let scrollTween = gsap.to(sections, {
+                xPercent: -100 * (sections.length - 0.95),
+                scrollTrigger: {
+                    trigger: ".sticky",
+                    pin: true,
+                    scrub: 1,
+                    end: "+=5000",
+                },
             });
-        </script>
-
-        <script>
-            const checkInitHeader = () => {
-                if (window.scrollY <= 10) {
-                    document.querySelector("header").classList.add("init");
-                } else {
-                    document.querySelector("header").classList.remove("init");
-                }
-            };
-
-            window.addEventListener("scroll", function () {
-                // Verificar si el usuario está cerca del final del documento
-                if (
-                    window.innerHeight + window.scrollY >=
-                    document.body.offsetHeight - 10
-                ) {
-                    document.querySelector("header").classList.add("dark");
-                    // document.querySelector("#projects").classList.add("dark");
-
-                    // Puedes realizar acciones aquí cuando llegas al final del documento
-                } else {
-                    document.querySelector("header").classList.remove("dark");
-                    // document
-                    //     .querySelector("#projects")
-                    //     .classList.remove("dark");
-                }
-
-                checkInitHeader();
-            });
-
-            window.addEventListener("DOMContentLoaded", checkInitHeader);
-        </script>
+        });
+    </script>
+    
+    <script>
+        const checkInitHeader = () => {
+            if (window.scrollY <= 10) {
+                document.querySelector("header").classList.add("init");
+            } else {
+                document.querySelector("header").classList.remove("init");
+            }
+        };
+    
+        window.addEventListener("scroll", function () {
+            // Verificar si el usuario está cerca del final del documento
+            if (
+                window.innerHeight + window.scrollY >=
+                document.body.offsetHeight - 10
+            ) {
+                document.querySelector("header").classList.add("dark");
+                // document.querySelector("#projects").classList.add("dark");
+    
+                // Puedes realizar acciones aquí cuando llegas al final del documento
+            } else {
+                document.querySelector("header").classList.remove("dark");
+                // document
+                //     .querySelector("#projects")
+                //     .classList.remove("dark");
+            }
+    
+            checkInitHeader();
+        });
+    
+        window.addEventListener("DOMContentLoaded", checkInitHeader);
+    </script>
     </body>
-</html>
+    </html>
+    
