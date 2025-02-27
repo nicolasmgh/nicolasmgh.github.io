@@ -1,465 +1,507 @@
-<html lang="en"><head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nicolas Godoy Hassan</title>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Nicolas Godoy Hassan</title>
 
-    <!-- material icons -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+        <!-- material icons -->
+        <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+        />
 
-    <style>
-        .material-symbols-outlined {
-            font-variation-settings:
-                'FILL' 0,
-                'wght' 400,
-                'GRAD' 0,
-                'opsz' 24
-        }
-    </style>
+        <style>
+            .material-symbols-outlined {
+                font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0,
+                    "opsz" 24;
+            }
+        </style>
 
-    <!-- styles -->
-    <link rel="stylesheet" href="/assets/styles/css/main.css">
+        <!-- styles -->
+        <link rel="stylesheet" href="/assets/styles/css/main.css" />
 
-    <!-- GSAP -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/ScrollTrigger.min.js"></script>
+        <!-- GSAP -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/gsap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/ScrollTrigger.min.js"></script>
+    </head>
 
-</head>
+    <body class="light-mode vsc-initialized">
+        <div class="cursor-dot"></div>
 
-<body class="light-mode vsc-initialized">
+        <header class="init">
+            <!-- logo -->
+            <section class="logo hoverable">
+                <a href="\portfolio">ngh</a>
+            </section>
 
-    <div class="cursor-dot"></div>
+            <!-- barra de navegacion -->
+            <nav>
+                <ul>
+                    <li class="drop-line">
+                        <a href="#" class="hoverable">CONTACTO</a>
+                    </li>
 
-    <header class="init">
-        <!-- logo -->
-        <section class="logo hoverable">
-            <a href="\portfolio">ngh</a>
-        </section>
+                    <li class="lang hoverable">ES</li>
 
-        <!-- barra de navegacion -->
-        <nav>
-            <ul>
-                <li class="drop-line">
-                    <a href="#" class="hoverable">CONTACTO</a>
-                </li>
+                    <li class="switch-modes hoverable">
+                        <span class="material-symbols-outlined">
+                            light_mode
+                        </span>
+                    </li>
 
-                <li class="lang hoverable">
-                    ES
-                </li>
+                    <li class="menu hoverable menu-closed">
+                        <span class="material-symbols-outlined"> apps </span>
+                        <div class="menu-container not-hoverable">
+                            <ul class="not-hoverable">
+                                <li class="not-hoverable">
+                                    <a class="hoverable" href="\portfolio/"
+                                        >HOME</a
+                                    >
+                                </li>
+                                <li class="not-hoverable">
+                                    <a class="hoverable" href="\portfolio/work/"
+                                        >PROYECTOS</a
+                                    >
+                                </li>
+                                <li class="not-hoverable">
+                                    <a class="hoverable" href="#">CONTACTO</a>
+                                </li>
+                                <li class="not-hoverable">
+                                    <a class="hoverable" href="#"
+                                        >DESCARGAR CV</a
+                                    >
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </header>
 
-                <li class="switch-modes hoverable">
-                    <span class="material-symbols-outlined">
-                        light_mode
-                    </span>
-                </li>
+        <script>
+            const mode = localStorage.getItem("siteMode");
+            const switchModes = document.querySelector(".switch-modes");
 
-                <li class="menu hoverable menu-closed">
-                    <span class="material-symbols-outlined">
-                        apps
-                    </span>
-                    <div class="menu-container not-hoverable">
-                        <ul class="not-hoverable">
-                            <li class="not-hoverable"><a class="hoverable" href="\portfolio/">HOME</a></li>
-                            <li class="not-hoverable"><a class="hoverable" href="\portfolio/work/">PROYECTOS</a>
-                            </li>
-                            <li class="not-hoverable"><a class="hoverable" href="#">CONTACTO</a></li>
-                            <li class="not-hoverable"><a class="hoverable" href="#">DESCARGAR CV</a></li>
-                        </ul>
-                    </div>
-                </li>
-        </ul></nav>
-    </header>
+            if (mode) {
+                const body = document.querySelector("body");
 
-    <script>
+                if (mode == "light") {
+                    if (body.classList.contains("dark-mode")) {
+                        body.classList.remove("dark-mode");
+                        body.classList.add("light-mode");
 
-        const mode = localStorage.getItem("siteMode");
-        const switchModes = document.querySelector('.switch-modes');
-
-        if (mode) {
-            const body = document.querySelector('body');
-
-            if (mode == 'light') {
-                if (body.classList.contains('dark-mode')) {
-                    body.classList.remove('dark-mode');
-                    body.classList.add('light-mode');
-
-                    switchModes.innerHTML = `
+                        switchModes.innerHTML = `
                 <span class="material-symbols-outlined">
                     light_mode
                 </span>
                 `;
-                }
-            } else {
-                if (body.classList.contains('light-mode')) {
-                    body.classList.remove('light-mode');
-                    body.classList.add('dark-mode');
+                    }
+                } else {
+                    if (body.classList.contains("light-mode")) {
+                        body.classList.remove("light-mode");
+                        body.classList.add("dark-mode");
 
-                    switchModes.innerHTML = `
+                        switchModes.innerHTML = `
                 <span class="material-symbols-outlined">
                 dark_mode
                 </span>
 `;
+                    }
                 }
             }
-        }
 
-        switchModes.addEventListener('click', () => {
-            const body = document.querySelector('body');
+            switchModes.addEventListener("click", () => {
+                const body = document.querySelector("body");
 
-            if (body.classList.contains('light-mode')) {
-                body.classList.remove('light-mode');
-                body.classList.add('dark-mode');
+                if (body.classList.contains("light-mode")) {
+                    body.classList.remove("light-mode");
+                    body.classList.add("dark-mode");
 
-                switchModes.innerHTML = `
+                    switchModes.innerHTML = `
                 <span class="material-symbols-outlined">
                     dark_mode
                 </span>
                 `;
-                localStorage.setItem("siteMode", "dark");
+                    localStorage.setItem("siteMode", "dark");
+                } else {
+                    body.classList.remove("dark-mode");
+                    body.classList.add("light-mode");
 
-            } else {
-                body.classList.remove('dark-mode');
-                body.classList.add('light-mode');
-
-                switchModes.innerHTML = `
+                    switchModes.innerHTML = `
                 <span class="material-symbols-outlined">
                     light_mode
                 </span>
 `;
-                localStorage.setItem("siteMode", "light");
-            }
-        });
-
-        const cursorDot = document.querySelector('.cursor-dot');
-
-        window.addEventListener('mousemove', e => {
-            const posX = e.clientX;
-            const posY = e.clientY;
-
-            cursorDot.animate({
-                left: `${posX}px`,
-                top: `${posY}px`,
-            }, { duration: 150, fill: "forwards" });
-        })
-
-        document.addEventListener('DOMContentLoaded', () => {
-            const links = document.querySelectorAll('.hoverable');
-
-            links.forEach(link => {
-                link.addEventListener('mouseover', (e) => {
-
-                    if (e.target.classList.contains('not-hoverable')) {
-                        return;
-                    }
-
-                    cursorDot.style.height = '50px'
-                    cursorDot.style.width = '50px'
-                    cursorDot.style.background = '#828DF7'
-                });
-
-                link.addEventListener('mouseout', () => {
-                    cursorDot.style.height = ''
-                    cursorDot.style.width = ''
-                    cursorDot.style.background = ''
-                });
-            })
-        })
-
-    </script>
-
-    <script>
-        const menu = document.querySelector('.menu');
-        const menuIcon = menu.querySelector('span');
-
-        menu.addEventListener('click', (e) => {
-            const test = e.currentTarget.children[1];
-
-            if (e.target.tagName == 'DIV') {
-                return;
-            }
-
-            if (e.currentTarget.classList.contains('menu-closed')) {
-                e.currentTarget.classList.remove('menu-closed')
-                e.currentTarget.classList.add('menu-open')
-
-                menuIcon.style.opacity = '0';
-
-
-                setTimeout(() => {
-                    test.style.transform = 'translateX(0)';
-                }, 1)
-
-                setTimeout(() => {
-                    menuIcon.innerHTML = `close`;
-                    menuIcon.style.opacity = '1';
-                }, 150)
-
-            } else {
-                const target = e.currentTarget;
-
-                test.style.transform = 'translateX(100vw)';
-                menuIcon.style.opacity = '0';
-
-                setTimeout(() => {
-                    menuIcon.innerHTML = `apps`;
-                    menuIcon.style.opacity = '1';
-                }, 150)
-
-                setTimeout(() => {
-                    target.classList.remove('menu-open')
-                    target.classList.add('menu-closed')
-
-                }, 300)
-            }
-        })
-    </script>
-
-<!-- hero -->
-<section id="hero">
-    <div class="text">
-        <div class="bg-text scroller">
-            <ul class="scroller__inner">
-                <li>Developer.</li>
-                <li>Designer.</li>
-            </ul>
-        </div>
-        <div class="front-text"><span class="hoverable">NICOLAS</span><br><span class="hoverable">GODOY HASSAN</span>
-        </div>
-    </div>
-</section>
-
-<section id="separator1">
-    <div class="scroller scroller1">
-
-        <ul class="scroller__inner">
-            <li>el mago</li>
-            <li>el mago</li>
-            <li>el mago</li>
-            <li>el mago</li>
-            <li>el mago</li>
-            <li>el mago</li>
-            <li>el mago</li>
-            <li>el mago</li>
-            <li>el mago</li>
-            <li>el mago</li>
-            <li>el mago</li>
-            <li>el mago</li>
-            <li>el mago</li>
-            <li>el mago</li>
-            <li>el mago</li>
-            <li>el mago</li>
-            <li>el mago</li>
-        </ul>
-    </div>
-
-    <div class="scroller scroller2">
-        <ul class="scroller__inner">
-            <li>el mago</li>
-            <li>el mago</li>
-            <li>el mago</li>
-            <li>el mago</li>
-            <li>el mago</li>
-            <li>el mago</li>
-            <li>el mago</li>
-            <li>el mago</li>
-            <li>el mago</li>
-            <li>el mago</li>
-            <li>el mago</li>
-            <li>el mago</li>
-            <li>el mago</li>
-            <li>el mago</li>
-            <li>el mago</li>
-            <li>el mago</li>
-            <li>el mago</li>
-        </ul>
-    </div>
-</section>
-
-<section id="about">
-    <section class="row-1">
-        <section class="col-1">SOBRE MI</section>
-        <section class="col-2">Desarrollador web full-stack con un fuerte enfoque en la estética y el diseño.<br>Siempre
-            busco optimizar cada proyecto en el que soy partícipe.</section>
-    </section>
-
-    <section class="row-2">
-        <section class="col-1">SOFTWARE&<br>HABILIDADES</section>
-        <section class="col-2">HTML, CSS, Sass, JS, jQuery, PHP, MySQL, git, MERN
-            Stack.<br><br>Figma.<br><br>Metodología Scrum.
-        </section>
-    </section>
-
-</section>
-
-<section id="separator2">
-    <div class="scroller scroller1">
-
-        <ul class="scroller__inner">
-            <li>aún hay más</li>
-            <li>aún hay más</li>
-            <li>aún hay más</li>
-            <li>aún hay más</li>
-            <li>aún hay más</li>
-            <li>aún hay más</li>
-            <li>aún hay más</li>
-            <li>aún hay más</li>
-        </ul>
-    </div>
-
-    <div class="scroller scroller2">
-        <ul class="scroller__inner">
-            <li>aún hay más</li>
-            <li>aún hay más</li>
-            <li>aún hay más</li>
-            <li>aún hay más</li>
-            <li>aún hay más</li>
-            <li>aún hay más</li>
-            <li>aún hay más</li>
-            <li>aún hay más</li>
-        </ul>
-    </div>
-</section>
-
-<section id="projects">
-    <h2>PROYECTOS</h2>
-
-    <section class="projects">
-        <a href="./work/project/sportivoescobar/" class="project hoverable">
-            <img src="./assets/images/projects_portrait/sportivo.jpg" alt="">
-
-            <div class="info">
-                <div class="type">Diseño & Desarrollo</div>
-                <div class="name">Sportivo Escobar</div>
-            </div>
-        </a>
-
-        <a href="./work/project/ciieescobar/" class="project hoverable">
-            <img src="./assets/images/projects_portrait/ciie.jpg" alt="">
-
-
-            <div class="info">
-                <div class="type">Diseño & Desarrollo</div>
-                <div class="name">CIIE Escobar</div>
-            </div>
-        </a>
-
-        <a href="./work/project/eest3savio/" class="project hoverable">
-            <img src="./assets/images/projects_portrait/eest3.jpg" alt="">
-
-            <div class="info">
-                <div class="type">Diseño & Desarrollo</div>
-                <div class="name">E.E.S.T. N°3 "Eva Perón"</div>
-            </div>
-        </a>
-
-        <a href="./work/project/precisar/" class="project hoverable">
-            <img src="./assets/images/projects_portrait/precisar.jpg" alt="">
-
-            <div class="info">
-                <div class="type">Diseño & Desarrollo</div>
-                <div class="name">Precisar</div>
-            </div>
-        </a>
-    </section>
-
-    <a href="./work/" class="see-more hoverable">
-        VER TODOS
-
-        <span class="material-symbols-outlined">
-            arrow_outward
-        </span>
-    </a>
-</section>
-
-<script>
-
-    let firstLoad = true;
-    let lastScrollTop;
-
-    function adelantarAnimacion(e) {
-        if (firstLoad) {
-            var currentDelay = lastScrollTop / 80;
-            e.style.animationDelay = `-${currentDelay}s`;
-        } else {
-            var currentDelay = parseFloat(window.getComputedStyle(e, null).getPropertyValue('animation-delay'));
-            e.style.animationDelay = (currentDelay + 0.1) + 's';
-        }
-    }
-
-    function retrasarAnimacion(e) {
-        var currentDelay = parseFloat(window.getComputedStyle(e, null).getPropertyValue('animation-delay'));
-        e.style.animationDelay = (currentDelay - 0.1) + 's';
-    }
-
-    const scrollers = document.querySelectorAll(".scroller");
-
-    // If a user hasn't opted in for recuded motion, then we add the animation
-    if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-        addAnimation();
-    }
-
-    function addAnimation() {
-        scrollers.forEach((scroller) => {
-            // add data-animated="true" to every `.scroller` on the page
-            scroller.setAttribute("data-animated", true);
-
-            // Make an array from the elements within `.scroller-inner`
-            const scrollerInner = scroller.querySelector(".scroller__inner");
-            const scrollerContent = Array.from(scrollerInner.children);
-
-            // For each item in the array, clone it
-            // add aria-hidden to it
-            // add it into the `.scroller-inner`
-            scrollerContent.forEach((item) => {
-                const duplicatedItem = item.cloneNode(true);
-                duplicatedItem.setAttribute("aria-hidden", true);
-                scrollerInner.appendChild(duplicatedItem);
+                    localStorage.setItem("siteMode", "light");
+                }
             });
-        });
-    }
 
-    document.addEventListener('DOMContentLoaded', handleScroll);
+            const cursorDot = document.querySelector(".cursor-dot");
 
-    window.addEventListener('scroll', (e) => {
-        handleScroll();
-    })
+            window.addEventListener("mousemove", (e) => {
+                const posX = e.clientX;
+                const posY = e.clientY;
 
-    function extraerNumeroDesdeTranslateString(str) {
-        var match = str.match(/translate\(([-+]?\d*\.?\d+)\w*\)/);
-        return match ? parseFloat(match[1]) : 0;
-    }
+                cursorDot.animate(
+                    {
+                        left: `${posX}px`,
+                        top: `${posY}px`,
+                    },
+                    { duration: 150, fill: "forwards" }
+                );
+            });
 
-    function handleScroll() {
-        console.log('handleado')
-        var scrollTop = window.scrollY || document.documentElement.scrollTop;
+            document.addEventListener("DOMContentLoaded", () => {
+                const links = document.querySelectorAll(".hoverable");
 
-        // Determinar la dirección del scroll comparando con la posición anterior
-        var scrollDirection = (scrollTop > lastScrollTop) ? 'abajo' : 'arriba';
+                links.forEach((link) => {
+                    link.addEventListener("mouseover", (e) => {
+                        if (e.target.classList.contains("not-hoverable")) {
+                            return;
+                        }
 
-        lastScrollTop = scrollTop;
+                        cursorDot.style.height = "50px";
+                        cursorDot.style.width = "50px";
+                        cursorDot.style.background = "#828DF7";
+                    });
 
-        if (scrollDirection == 'abajo') {
-            scrollDown();
-        } else {
-            scrollUp();
-        }
+                    link.addEventListener("mouseout", () => {
+                        cursorDot.style.height = "";
+                        cursorDot.style.width = "";
+                        cursorDot.style.background = "";
+                    });
+                });
+            });
+        </script>
 
-        // Actualizar la posición anterior del scroll
+        <script>
+            const menu = document.querySelector(".menu");
+            const menuIcon = menu.querySelector("span");
 
-        // console.log(lastScrollTop)
-    }
+            menu.addEventListener("click", (e) => {
+                const test = e.currentTarget.children[1];
 
-    const scrollDown = () => {
-        let scroller1 = document.querySelector('#separator1 .scroller1');
-        let scroller2 = document.querySelector('#separator1 .scroller2');
-        let scroller3 = document.querySelector('#separator2 .scroller1');
-        let scroller4 = document.querySelector('#separator2 .scroller2');
+                if (e.target.tagName == "DIV") {
+                    return;
+                }
 
-        retrasarAnimacion(scroller1);
-        retrasarAnimacion(scroller2);
-        retrasarAnimacion(scroller3);
-        retrasarAnimacion(scroller4);
+                if (e.currentTarget.classList.contains("menu-closed")) {
+                    e.currentTarget.classList.remove("menu-closed");
+                    e.currentTarget.classList.add("menu-open");
 
-        /*         let pos1 = extraerNumeroDesdeTranslateString(scroller1.style.transform);
+                    menuIcon.style.opacity = "0";
+
+                    setTimeout(() => {
+                        test.style.transform = "translateX(0)";
+                    }, 1);
+
+                    setTimeout(() => {
+                        menuIcon.innerHTML = `close`;
+                        menuIcon.style.opacity = "1";
+                    }, 150);
+                } else {
+                    const target = e.currentTarget;
+
+                    test.style.transform = "translateX(100vw)";
+                    menuIcon.style.opacity = "0";
+
+                    setTimeout(() => {
+                        menuIcon.innerHTML = `apps`;
+                        menuIcon.style.opacity = "1";
+                    }, 150);
+
+                    setTimeout(() => {
+                        target.classList.remove("menu-open");
+                        target.classList.add("menu-closed");
+                    }, 300);
+                }
+            });
+        </script>
+
+        <!-- hero -->
+        <section id="hero">
+            <div class="text">
+                <div class="bg-text scroller">
+                    <ul class="scroller__inner">
+                        <li>Developer.</li>
+                        <li>Designer.</li>
+                    </ul>
+                </div>
+                <div class="front-text">
+                    <span class="hoverable">NICOLAS</span><br /><span
+                        class="hoverable"
+                        >GODOY HASSAN</span
+                    >
+                </div>
+            </div>
+        </section>
+
+        <section id="separator1">
+            <div class="scroller scroller1">
+                <ul class="scroller__inner">
+                    <li>el mago</li>
+                    <li>el mago</li>
+                    <li>el mago</li>
+                    <li>el mago</li>
+                    <li>el mago</li>
+                    <li>el mago</li>
+                    <li>el mago</li>
+                    <li>el mago</li>
+                    <li>el mago</li>
+                    <li>el mago</li>
+                    <li>el mago</li>
+                    <li>el mago</li>
+                    <li>el mago</li>
+                    <li>el mago</li>
+                    <li>el mago</li>
+                    <li>el mago</li>
+                    <li>el mago</li>
+                </ul>
+            </div>
+
+            <div class="scroller scroller2">
+                <ul class="scroller__inner">
+                    <li>el mago</li>
+                    <li>el mago</li>
+                    <li>el mago</li>
+                    <li>el mago</li>
+                    <li>el mago</li>
+                    <li>el mago</li>
+                    <li>el mago</li>
+                    <li>el mago</li>
+                    <li>el mago</li>
+                    <li>el mago</li>
+                    <li>el mago</li>
+                    <li>el mago</li>
+                    <li>el mago</li>
+                    <li>el mago</li>
+                    <li>el mago</li>
+                    <li>el mago</li>
+                    <li>el mago</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="about">
+            <section class="row-1">
+                <section class="col-1">SOBRE MI</section>
+                <section class="col-2">
+                    Desarrollador web full-stack con un fuerte enfoque en la
+                    estética y el diseño.<br />Siempre busco optimizar cada
+                    proyecto en el que soy partícipe.
+                </section>
+            </section>
+
+            <section class="row-2">
+                <section class="col-1">SOFTWARE&<br />HABILIDADES</section>
+                <section class="col-2">
+                    HTML, CSS, Sass, JS, jQuery, PHP, MySQL, git, MERN Stack.<br /><br />Figma.<br /><br />Metodología
+                    Scrum.
+                </section>
+            </section>
+        </section>
+
+        <section id="separator2">
+            <div class="scroller scroller1">
+                <ul class="scroller__inner">
+                    <li>aún hay más</li>
+                    <li>aún hay más</li>
+                    <li>aún hay más</li>
+                    <li>aún hay más</li>
+                    <li>aún hay más</li>
+                    <li>aún hay más</li>
+                    <li>aún hay más</li>
+                    <li>aún hay más</li>
+                </ul>
+            </div>
+
+            <div class="scroller scroller2">
+                <ul class="scroller__inner">
+                    <li>aún hay más</li>
+                    <li>aún hay más</li>
+                    <li>aún hay más</li>
+                    <li>aún hay más</li>
+                    <li>aún hay más</li>
+                    <li>aún hay más</li>
+                    <li>aún hay más</li>
+                    <li>aún hay más</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="projects">
+            <h2>PROYECTOS</h2>
+
+            <section class="projects">
+                <a
+                    href="./work/project/sportivoescobar/"
+                    class="project hoverable"
+                >
+                    <img
+                        src="./assets/images/projects_portrait/sportivo.jpg"
+                        alt=""
+                    />
+
+                    <div class="info">
+                        <div class="type">Diseño & Desarrollo</div>
+                        <div class="name">Sportivo Escobar</div>
+                    </div>
+                </a>
+
+                <a href="./work/project/ciieescobar/" class="project hoverable">
+                    <img
+                        src="./assets/images/projects_portrait/ciie.jpg"
+                        alt=""
+                    />
+
+                    <div class="info">
+                        <div class="type">Diseño & Desarrollo</div>
+                        <div class="name">CIIE Escobar</div>
+                    </div>
+                </a>
+
+                <a href="./work/project/eest3savio/" class="project hoverable">
+                    <img
+                        src="./assets/images/projects_portrait/eest3.jpg"
+                        alt=""
+                    />
+
+                    <div class="info">
+                        <div class="type">Diseño & Desarrollo</div>
+                        <div class="name">E.E.S.T. N°3 "Eva Perón"</div>
+                    </div>
+                </a>
+
+                <a href="./work/project/precisar/" class="project hoverable">
+                    <img
+                        src="./assets/images/projects_portrait/precisar.jpg"
+                        alt=""
+                    />
+
+                    <div class="info">
+                        <div class="type">Diseño & Desarrollo</div>
+                        <div class="name">Precisar</div>
+                    </div>
+                </a>
+            </section>
+
+            <a href="./work/" class="see-more hoverable">
+                VER TODOS
+
+                <span class="material-symbols-outlined"> arrow_outward </span>
+            </a>
+        </section>
+
+        <script>
+            let firstLoad = true;
+            let lastScrollTop;
+
+            function adelantarAnimacion(e) {
+                if (firstLoad) {
+                    var currentDelay = lastScrollTop / 80;
+                    e.style.animationDelay = `-${currentDelay}s`;
+                } else {
+                    var currentDelay = parseFloat(
+                        window
+                            .getComputedStyle(e, null)
+                            .getPropertyValue("animation-delay")
+                    );
+                    e.style.animationDelay = currentDelay + 0.1 + "s";
+                }
+            }
+
+            function retrasarAnimacion(e) {
+                var currentDelay = parseFloat(
+                    window
+                        .getComputedStyle(e, null)
+                        .getPropertyValue("animation-delay")
+                );
+                e.style.animationDelay = currentDelay - 0.1 + "s";
+            }
+
+            const scrollers = document.querySelectorAll(".scroller");
+
+            // If a user hasn't opted in for recuded motion, then we add the animation
+            if (
+                !window.matchMedia("(prefers-reduced-motion: reduce)").matches
+            ) {
+                addAnimation();
+            }
+
+            function addAnimation() {
+                scrollers.forEach((scroller) => {
+                    // add data-animated="true" to every `.scroller` on the page
+                    scroller.setAttribute("data-animated", true);
+
+                    // Make an array from the elements within `.scroller-inner`
+                    const scrollerInner =
+                        scroller.querySelector(".scroller__inner");
+                    const scrollerContent = Array.from(scrollerInner.children);
+
+                    // For each item in the array, clone it
+                    // add aria-hidden to it
+                    // add it into the `.scroller-inner`
+                    scrollerContent.forEach((item) => {
+                        const duplicatedItem = item.cloneNode(true);
+                        duplicatedItem.setAttribute("aria-hidden", true);
+                        scrollerInner.appendChild(duplicatedItem);
+                    });
+                });
+            }
+
+            document.addEventListener("DOMContentLoaded", handleScroll);
+
+            window.addEventListener("scroll", (e) => {
+                handleScroll();
+            });
+
+            function extraerNumeroDesdeTranslateString(str) {
+                var match = str.match(/translate\(([-+]?\d*\.?\d+)\w*\)/);
+                return match ? parseFloat(match[1]) : 0;
+            }
+
+            function handleScroll() {
+                console.log("handleado");
+                var scrollTop =
+                    window.scrollY || document.documentElement.scrollTop;
+
+                // Determinar la dirección del scroll comparando con la posición anterior
+                var scrollDirection =
+                    scrollTop > lastScrollTop ? "abajo" : "arriba";
+
+                lastScrollTop = scrollTop;
+
+                if (scrollDirection == "abajo") {
+                    scrollDown();
+                } else {
+                    scrollUp();
+                }
+
+                // Actualizar la posición anterior del scroll
+
+                // console.log(lastScrollTop)
+            }
+
+            const scrollDown = () => {
+                let scroller1 = document.querySelector(
+                    "#separator1 .scroller1"
+                );
+                let scroller2 = document.querySelector(
+                    "#separator1 .scroller2"
+                );
+                let scroller3 = document.querySelector(
+                    "#separator2 .scroller1"
+                );
+                let scroller4 = document.querySelector(
+                    "#separator2 .scroller2"
+                );
+
+                retrasarAnimacion(scroller1);
+                retrasarAnimacion(scroller2);
+                retrasarAnimacion(scroller3);
+                retrasarAnimacion(scroller4);
+
+                /*         let pos1 = extraerNumeroDesdeTranslateString(scroller1.style.transform);
                 let pos2 = extraerNumeroDesdeTranslateString(scroller2.style.transform);
                 let pos3 = extraerNumeroDesdeTranslateString(scroller3.style.transform);
                 let pos4 = extraerNumeroDesdeTranslateString(scroller4.style.transform);
@@ -468,24 +510,31 @@
                 scroller2.style.transform = `translate(${(lastScrollTop / 15)}px)`;
                 scroller3.style.transform = `translate(${(lastScrollTop / 15)}px)`;
                 scroller4.style.transform = `translate(-${(lastScrollTop / 15)}px)`; */
-        // console.log(scroller2)
-    }
+                // console.log(scroller2)
+            };
 
-    const scrollUp = () => {
-        let scroller1 = document.querySelector('#separator1 .scroller1');
-        let scroller2 = document.querySelector('#separator1 .scroller2');
-        let scroller3 = document.querySelector('#separator2 .scroller1');
-        let scroller4 = document.querySelector('#separator2 .scroller2');
+            const scrollUp = () => {
+                let scroller1 = document.querySelector(
+                    "#separator1 .scroller1"
+                );
+                let scroller2 = document.querySelector(
+                    "#separator1 .scroller2"
+                );
+                let scroller3 = document.querySelector(
+                    "#separator2 .scroller1"
+                );
+                let scroller4 = document.querySelector(
+                    "#separator2 .scroller2"
+                );
 
-        adelantarAnimacion(scroller1);
-        adelantarAnimacion(scroller2);
-        adelantarAnimacion(scroller3);
-        adelantarAnimacion(scroller4);
+                adelantarAnimacion(scroller1);
+                adelantarAnimacion(scroller2);
+                adelantarAnimacion(scroller3);
+                adelantarAnimacion(scroller4);
 
-        firstLoad = false;
+                firstLoad = false;
 
-
-        /*         let pos1 = extraerNumeroDesdeTranslateString(scroller1.style.transform);
+                /*         let pos1 = extraerNumeroDesdeTranslateString(scroller1.style.transform);
                 let pos2 = extraerNumeroDesdeTranslateString(scroller2.style.transform);
                 let pos3 = extraerNumeroDesdeTranslateString(scroller3.style.transform);
                 let pos4 = extraerNumeroDesdeTranslateString(scroller4.style.transform);
@@ -494,7 +543,54 @@
                 scroller2.style.transform = `translate(${(lastScrollTop / 15)}px)`;
                 scroller3.style.transform = `translate(${(lastScrollTop / 15)}px)`;
                 scroller4.style.transform = `translate(-${(lastScrollTop / 15)}px)`; */
-    }
-</script>
+            };
+        </script>
 
-<?php include_once APP_PATH . '\templates\footer.php';
+        <section id="footer">
+            <div class="text">
+                <h2>LLEGASTE AL FINAL</h2>
+                <p>Tal vez sea momento de escribirnos.</p>
+
+                <a href="#" class="hoverable"
+                    >CONTACTAME
+
+                    <span class="material-symbols-outlined">
+                        arrow_outward
+                    </span>
+                </a>
+            </div>
+        </section>
+
+        <script>
+            const checkInitHeader = () => {
+                if (window.scrollY <= 10) {
+                    document.querySelector("header").classList.add("init");
+                } else {
+                    document.querySelector("header").classList.remove("init");
+                }
+            };
+
+            window.addEventListener("scroll", function () {
+                // Verificar si el usuario está cerca del final del documento
+                if (
+                    window.innerHeight + window.scrollY >=
+                    document.body.offsetHeight - 10
+                ) {
+                    document.querySelector("header").classList.add("dark");
+                    document.querySelector("#projects").classList.add("dark");
+
+                    // Puedes realizar acciones aquí cuando llegas al final del documento
+                } else {
+                    document.querySelector("header").classList.remove("dark");
+                    document
+                        .querySelector("#projects")
+                        .classList.remove("dark");
+                }
+
+                checkInitHeader();
+            });
+
+            window.addEventListener("DOMContentLoaded", checkInitHeader);
+        </script>
+    </body>
+</html>
