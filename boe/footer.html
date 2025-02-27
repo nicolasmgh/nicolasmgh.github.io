@@ -1,0 +1,48 @@
+<section id="footer">
+    <div class="text">
+        <h2>LLEGASTE AL FINAL</h2>
+        <p>Tal vez sea momento de escribirnos.</p>
+
+        <a href="#" class="hoverable"
+            >CONTACTAME
+
+            <span class="material-symbols-outlined">
+                arrow_outward
+            </span>
+        </a>
+    </div>
+</section>
+
+<script>
+    const checkInitHeader = () => {
+        if (window.scrollY <= 10) {
+            document.querySelector("header").classList.add("init");
+        } else {
+            document.querySelector("header").classList.remove("init");
+        }
+    };
+
+    window.addEventListener("scroll", function () {
+        // Verificar si el usuario está cerca del final del documento
+        if (
+            window.innerHeight + window.scrollY >=
+            document.body.offsetHeight - 10
+        ) {
+            document.querySelector("header").classList.add("dark");
+            document.querySelector("#projects").classList.add("dark");
+
+            // Puedes realizar acciones aquí cuando llegas al final del documento
+        } else {
+            document.querySelector("header").classList.remove("dark");
+            document
+                .querySelector("#projects")
+                .classList.remove("dark");
+        }
+
+        checkInitHeader();
+    });
+
+    window.addEventListener("DOMContentLoaded", checkInitHeader);
+</script>
+</body>
+</html>
