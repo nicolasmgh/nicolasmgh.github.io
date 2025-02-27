@@ -336,7 +336,7 @@ header.init {
   color: #655A78;
 }
 .light-mode #about > section > section.col-2 {
-  color: #444;
+  color: #655A78;
 }
 
 .dark-mode #about {
@@ -346,7 +346,7 @@ header.init {
   color: #756492;
 }
 .dark-mode #about > section > section.col-2 {
-  color: #eee;
+  color: #756492;
 }
 
 #projects {
