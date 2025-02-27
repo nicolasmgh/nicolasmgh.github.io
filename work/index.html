@@ -29,9 +29,18 @@
         <div class="cursor-dot"></div>
 
         <header class="init">
-            <!-- logo -->
-            <section class="logo hoverable">
-                <a href="\">ngh</a>
+            <section class="left">
+                <!-- back button -->
+                <a id="back" href="#">
+                    <span class="material-symbols-outlined icon">
+                        arrow_back_ios_new
+                    </span>
+                </a>
+
+                <!-- logo -->
+                <section class="logo hoverable">
+                    <a href="\">ngh</a>
+                </section>
             </section>
 
             <!-- barra de navegacion -->
@@ -219,107 +228,161 @@
                 }
             });
         </script>
+        <style>
+            #back {
+                font-family: "Plus Jakarta Sans";
+            }
+
+            header > section.left {
+                display: flex;
+                gap: 10px;
+                flex-direction: row;
+                align-items: flex-end;
+            }
+
+            header a#back {
+                text-decoration: none;
+                color: #555;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+            }
+            header a#back span.icon {
+                margin-right: 10px;
+                padding: 8px;
+                background: #f7f7f7;
+                border-radius: 8px;
+                font-size: 11px;
+                font-variation-settings: "wght" 600;
+                color: #888;
+            }
+            span.text {
+                font-weight: 500;
+                font-size: 16px;
+                color: #555;
+            }
+
+            .dark-mode header a#back span.icon {
+                background: #444;
+                color: #fff;
+            }
+
+            .dark-mode header a#back span.text {
+                color: #fff;
+            }
+        </style>
+
+        <section id="projects" class="projects-page">
+            <h2>PROYECTOS</h2>
+
+            <section class="projects">
+                <a href="./project/sportivoescobar/" class="project hoverable">
+                    <img
+                        src="/assets/images/projects_portrait/sportivo.jpg"
+                        alt=""
+                    />
+
+                    <div class="info">
+                        <div class="type">Diseño & Desarrollo</div>
+                        <div class="name">Sportivo Escobar</div>
+                    </div>
+                </a>
+
+                <a href="./project/talkfi/" class="project hoverable">
+                    <img
+                        src="/assets/images/projects_portrait/talkfi.jpg"
+                        alt=""
+                    />
+
+                    <div class="info">
+                        <div class="type">Diseño & Desarrollo</div>
+                        <div class="name">TalkFi</div>
+                    </div>
+                </a>
+
+                <a href="./project/ciieescobar/" class="project hoverable">
+                    <img
+                        src="/assets/images/projects_portrait/ciie.jpg"
+                        alt=""
+                    />
+
+                    <div class="info">
+                        <div class="type">Diseño & Desarrollo</div>
+                        <div class="name">CIIE Escobar</div>
+                    </div>
+                </a>
+
+                <a href="./project/eest3savio/" class="project hoverable">
+                    <img
+                        src="/assets/images/projects_portrait/eest3.jpg"
+                        alt=""
+                    />
+
+                    <div class="info">
+                        <div class="type">Diseño & Desarrollo</div>
+                        <div class="name">E.E.S.T. N°3 "Eva Perón"</div>
+                    </div>
+                </a>
+
+                <a href="./project/precisar/" class="project hoverable">
+                    <img
+                        src="/assets/images/projects_portrait/precisar.jpg"
+                        alt=""
+                    />
+
+                    <div class="info">
+                        <div class="type">Diseño & Desarrollo</div>
+                        <div class="name">Precisar</div>
+                    </div>
+                </a>
+            </section>
+        </section>
+
+        <section id="footer">
+            <div class="text">
+                <h2>LLEGASTE AL FINAL</h2>
+                <p>Tal vez sea momento de escribirnos.</p>
+
+                <a href="/contact/" class="hoverable"
+                    >CONTACTAME
+
+                    <span class="material-symbols-outlined">
+                        arrow_outward
+                    </span>
+                </a>
+            </div>
+        </section>
+
+        <script>
+            const checkInitHeader = () => {
+                if (window.scrollY <= 10) {
+                    document.querySelector("header").classList.add("init");
+                } else {
+                    document.querySelector("header").classList.remove("init");
+                }
+            };
+
+            window.addEventListener("scroll", function () {
+                // Verificar si el usuario está cerca del final del documento
+                if (
+                    window.innerHeight + window.scrollY >=
+                    document.body.offsetHeight - 10
+                ) {
+                    document.querySelector("header").classList.add("dark");
+                    document.querySelector("#projects").classList.add("dark");
+
+                    // Puedes realizar acciones aquí cuando llegas al final del documento
+                } else {
+                    document.querySelector("header").classList.remove("dark");
+                    document
+                        .querySelector("#projects")
+                        .classList.remove("dark");
+                }
+
+                checkInitHeader();
+            });
+
+            window.addEventListener("DOMContentLoaded", checkInitHeader);
+        </script>
     </body>
-</html>
-
-
-<section id="projects" class="projects-page">
-    <h2>PROYECTOS</h2>
-
-    <section class="projects">
-        <a href="./project/sportivoescobar/" class="project hoverable">
-            <img src="/assets/images/projects_portrait/sportivo.jpg" alt="">
-
-            <div class="info">
-                <div class="type">Diseño & Desarrollo</div>
-                <div class="name">Sportivo Escobar</div>
-            </div>
-        </a>
-
-        <a href="./project/talkfi/" class="project hoverable">
-            <img src="/assets/images/projects_portrait/talkfi.jpg" alt="">
-
-            <div class="info">
-                <div class="type">Diseño & Desarrollo</div>
-                <div class="name">TalkFi</div>
-            </div>
-        </a>
-
-        <a href="./project/ciieescobar/" class="project hoverable">
-            <img src="/assets/images/projects_portrait/ciie.jpg" alt="">
-
-
-            <div class="info">
-                <div class="type">Diseño & Desarrollo</div>
-                <div class="name">CIIE Escobar</div>
-            </div>
-        </a>
-
-        <a href="./project/eest3savio/" class="project hoverable">
-            <img src="/assets/images/projects_portrait/eest3.jpg" alt="">
-
-            <div class="info">
-                <div class="type">Diseño & Desarrollo</div>
-                <div class="name">E.E.S.T. N°3 "Eva Perón"</div>
-            </div>
-        </a>
-
-        <a href="./project/precisar/" class="project hoverable">
-            <img src="/assets/images/projects_portrait/precisar.jpg" alt="">
-
-            <div class="info">
-                <div class="type">Diseño & Desarrollo</div>
-                <div class="name">Precisar</div>
-            </div>
-        </a>
-    </section>
-</section>
-
-<section id="footer">
-    <div class="text">
-        <h2>LLEGASTE AL FINAL</h2>
-        <p>Tal vez sea momento de escribirnos.</p>
-
-        <a href="/contact/" class="hoverable"
-            >CONTACTAME
-
-            <span class="material-symbols-outlined">
-                arrow_outward
-            </span>
-        </a>
-    </div>
-</section>
-
-<script>
-    const checkInitHeader = () => {
-        if (window.scrollY <= 10) {
-            document.querySelector("header").classList.add("init");
-        } else {
-            document.querySelector("header").classList.remove("init");
-        }
-    };
-
-    window.addEventListener("scroll", function () {
-        // Verificar si el usuario está cerca del final del documento
-        if (
-            window.innerHeight + window.scrollY >=
-            document.body.offsetHeight - 10
-        ) {
-            document.querySelector("header").classList.add("dark");
-            document.querySelector("#projects").classList.add("dark");
-
-            // Puedes realizar acciones aquí cuando llegas al final del documento
-        } else {
-            document.querySelector("header").classList.remove("dark");
-            document
-                .querySelector("#projects")
-                .classList.remove("dark");
-        }
-
-        checkInitHeader();
-    });
-
-    window.addEventListener("DOMContentLoaded", checkInitHeader);
-</script>
-</body>
 </html>
