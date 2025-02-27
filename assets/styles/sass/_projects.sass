@@ -1,0 +1,86 @@
+#projects
+    padding: 100px 70px
+
+    &.projects-page
+        padding: 200px 70px 100px 70px
+
+    h2
+        font-family: "ObjectSans-Heavy"
+        font-size: 80px
+        margin: 0
+
+    .projects
+        margin-top: 100px
+        display: grid
+        grid-template-columns: repeat(2, 1fr)
+        grid-gap: 100px 40px
+
+        .project
+            text-decoration: none
+            
+            img
+                box-shadow: 3px 0px 8px 0px #00000020
+                border-radius: 24px
+                height: 550px
+                width: 100%
+                object-fit: cover
+
+            .info
+                margin: 20px 24px
+
+                .type
+                    font-family: "PlusJakartaSans"
+                    font-weight: 500
+                    font-size: 12px
+                    text-transform: uppercase
+
+                .name
+                    font-family: "ObjectSans-Heavy"
+                    font-size: 36px
+                    font-weight: 700
+    
+    .see-more
+        font-weight: 800
+        font-family: "ObjectSans-Heavy"
+        font-size: 50px
+        display: flex
+        align-items: flex-end
+        margin-top: 100px
+        text-decoration: none
+        width: fit-content
+
+        span
+            font-size: 50px
+            margin-left: 10px
+            margin-bottom: 5px
+
+.light-mode
+    #projects
+        background: $light-bg
+
+        h2
+            color: $light-text
+
+        .projects
+            .project
+                color: $light-text
+        
+        .see-more
+            color: $light-text
+
+.dark-mode
+    #projects
+        background: $dark-bg
+
+        h2
+            color: $dark-text
+
+        .projects
+            .project
+                color: $dark-text
+        
+        .see-more
+            color: $dark-text
+
+#projects.dark
+    background: $dark-bg

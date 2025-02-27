@@ -1,0 +1,43 @@
+#about
+    padding: 140px 70px
+    margin: auto
+    display: flex
+    flex-direction: column
+    gap: 80px
+    max-width: calc(1920px - 140px)
+
+    >section
+        display: flex
+        flex-direction: row
+
+        >section.col-1
+            flex: 4
+            font-size: 80px
+            font-family: "ObjectSans-Heavy"
+            line-height: 1
+
+        >section.col-2
+            flex: 6
+            font-size: 20px
+            font-family: "PlusJakartaSans"
+            margin-top: 20px
+
+.light-mode
+    #about
+        background: $light-bg
+
+        >section
+            color: $light-text
+
+            >section.col-2
+                color: #444
+
+.dark-mode
+    #about
+        background: $dark-bg
+
+        >section
+            color: $dark-text
+
+            >section.col-2
+                color: #eee

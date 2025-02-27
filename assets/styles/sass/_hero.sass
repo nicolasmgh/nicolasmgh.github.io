@@ -1,0 +1,58 @@
+#hero
+    display: flex
+    height: 100vh
+
+    .text
+        overflow: hidden
+        display: flex
+        flex-direction: column
+        justify-content: center
+
+        .bg-text
+            margin-bottom: 300px    
+            font-family: "ObjectSans-Regular"
+            font-size: 200px
+            width: max-content
+            position: absolute
+            animation: scroll 60s forwards linear infinite
+            transition: none
+
+            ul
+                margin: 0
+                padding: 0
+                display: flex
+                flex-direction: row
+                list-style-type: none
+                gap: 40px
+                transition: none
+
+        .front-text
+            font-family: "ObjectSans-Heavy"
+            font-size: 120px
+            line-height: 1
+            padding: 0 70px
+            z-index: 1
+
+.light-mode
+    #hero
+        background: $light-bg
+        
+        .bg-text
+            color: $low-opacity-text1
+        
+        .front-text
+            color: $light-text
+
+
+
+.dark-mode
+    #hero
+        background: $dark-bg
+        
+        .bg-text
+            color: $low-opacity-text2
+        
+        .front-text
+            color: $dark-text
+
+

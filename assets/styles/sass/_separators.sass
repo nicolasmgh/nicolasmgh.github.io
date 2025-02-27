@@ -1,0 +1,62 @@
+#separator1
+    font-size: 60px
+    font-family: "PlusJakartaSans"
+    width: max-content
+    font-weight: 800
+    word-spacing: 4px
+
+    .scroller
+        transition: none
+
+        ul
+            margin: 0
+            padding: 0
+            display: flex
+            flex-direction: row
+            list-style-type: none
+            gap: 0 20px
+            transition: none
+
+            li
+                transition: none
+        
+        &:first-child
+            animation: scroll 200s forwards linear infinite normal
+        
+        &:last-child
+            animation: scroll 200s forwards linear infinite reverse
+
+#separator2
+    font-size: 60px
+    font-family: "PlusJakartaSans"
+    width: max-content
+    font-weight: 800
+    word-spacing: 4px
+
+    .scroller
+        transition: .3s all ease
+
+        ul
+            margin: 0
+            padding: 0
+            display: flex
+            flex-direction: row
+            list-style-type: none
+            gap: 0 20px
+            transition: .3s all ease
+        
+        &:first-child
+            animation: scroll 200s forwards linear infinite reverse
+        
+        &:last-child
+            animation: scroll 200s forwards linear infinite normal
+
+.light-mode
+    #separator1, #separator2
+        background: $light-bg
+        color: $low-opacity-text1
+
+.dark-mode
+    #separator1, #separator2
+        background: $dark-bg
+        color: $low-opacity-text2

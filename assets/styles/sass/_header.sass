@@ -1,0 +1,140 @@
+header
+    padding: 20px 55px
+    display: flex
+    align-items: center
+    justify-content: space-between
+    font-family: "PlusJakartaSans"
+    user-select: none
+    position: fixed
+    left: 0
+    right: 0
+    top: 0
+    z-index: 400
+    background: $light-bg
+    margin: 10px 70px
+    border-radius: 24px
+    box-shadow: 0px 4px 8px 0px #00000020
+    transition: .25s all
+
+
+    .logo
+        a
+            text-decoration: none
+            font-weight: 800
+            font-size: 24px
+    
+    >nav
+        >ul
+            margin: 0
+            padding: 0
+            list-style-type: none
+            display: flex
+            align-items: center
+            gap: 20px
+
+            >li
+                margin: 0
+                padding: 0
+
+                &.drop-line
+                    margin-right: 15px
+
+                    a
+                        text-decoration: none
+                        font-weight: 800
+                        font-size: 16px
+
+                &.lang
+                    font-weight: 800
+                    font-size: 14px
+
+                &.switch-modes
+                    height: 20px
+
+                    span
+                        font-size: 20px
+
+                &.menu
+                    height: 35px
+
+                    span
+                        font-size: 35px
+                        transition: .3s all
+                    
+                &.menu-closed
+                    div.menu-container
+                        display: none
+                        transition: .3s all
+                
+                &.menu-open
+                    div.menu-container
+                        display: flex
+                        align-items: center
+                        justify-content: center
+                        width: 100vw
+                        height: 100vh
+                        position: fixed
+                        top: 0
+                        left: 0
+                        right: 0
+                        z-index: -1
+                        transition: .3s all
+                        transform: translateX(100vw)
+
+                        ul
+                            margin: 0
+                            padding: 0
+                            list-style-type: none
+                            margin-left: -40%
+                            display: flex
+                            flex-direction: column
+
+                            li
+                                gap: 30px
+                                padding: 0
+                                margin: 0
+
+                                a
+                                    font-family: "ObjectSans-Heavy"
+                                    text-decoration: none
+                                    font-size: 72px
+
+.light-mode
+    header
+        background: $light-bg
+        color: $light-text
+
+        a, span, .lang
+            color: $light-text
+
+        div.menu-container
+            background: #FFF
+
+.dark-mode
+    header
+        background: $dark-bg
+        color: $dark-text
+
+        a, span, .lang
+            color: $dark-text
+
+        div.menu-container
+            background: #111
+
+header.dark
+    background: $dark-bg
+    color: $dark-text
+    box-shadow: none
+
+    a, span, .lang
+        color: $dark-text
+
+    div.menu-container
+        background: #111
+
+header.init
+    margin: 15px 70px
+    border-radius: none
+    box-shadow: none
+    background: transparent
+    

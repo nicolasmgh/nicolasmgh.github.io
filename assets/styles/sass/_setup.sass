@@ -1,0 +1,48 @@
+$light-text: #222222
+$light-bg: #FFFFFF
+$low-opacity-text1: #0000001a
+$dark-text: #FFFFFF
+$dark-bg: #111  
+$low-opacity-text2: #FFFFFF1a
+
+@font-face
+    font-family: "ObjectSans-Heavy"
+    src: url("/portfolio/assets/fonts/object-sans/ObjectSans-Heavy.otf")
+
+@font-face
+    font-family: "ObjectSans-Regular"
+    src: url("/portfolio/assets/fonts/object-sans/ObjectSans-Regular.otf")
+
+@font-face
+    font-family: "PlusJakartaSans"
+    src: url("/portfolio/assets/fonts/plus-jakarta-sans/PlusJakartaSans-VariableFont_wght.ttf")
+
+@keyframes scroll
+    to 
+        transform: translate(calc(-50% - 0.5rem))
+
+*
+    transition: .3s background ease-out, .3s color ease-out
+
+body
+    all: unset
+    overflow-x: hidden
+    cursor: none
+
+    a, span
+        cursor: none
+
+
+    .cursor-dot
+        transition: .35s all
+        width: 25px
+        height: 25px
+        background: #B0BDFC
+        opacity: 0.6
+        position: fixed
+        top: -100px
+        left: 0
+        transform: translate(-50%, -50%)
+        border-radius: 50%
+        z-index: 1000
+        pointer-events: none
