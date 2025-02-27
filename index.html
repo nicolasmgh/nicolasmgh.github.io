@@ -220,6 +220,18 @@
             });
         </script>
 
+        <script>
+            let alertaResponsive = sessionStorage.getItem("alertaResponsive");
+
+            if (!alertaResponsive) {
+                alert(
+                    "Atención: el sitio aún no cuenta con un diseño responsive, por lo que el sitio podría experimentar problemas."
+                );
+
+                sessionStorage.setItem("alertaResponsive", 1);
+            }
+        </script>
+
         <!-- hero -->
         <section id="hero">
             <div class="text">
