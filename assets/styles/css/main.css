@@ -60,6 +60,9 @@ header {
   box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.1254901961);
   transition: 0.25s all;
 }
+header .logo {
+  transition: 0.4s all;
+}
 header .logo a {
   text-decoration: none;
   font-weight: 800;

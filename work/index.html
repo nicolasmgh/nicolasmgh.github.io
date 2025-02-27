@@ -191,14 +191,17 @@
 
             const handleBackBtn = (e) => {
                 let backBtn = document.querySelector("#back");
-                console.log("concha de la perra");
-                console.log(backBtn);
 
                 if (backBtn) {
                     if (e == "opening") {
+                        backBtn.style.translate = "-100px";
+                        backBtn.style.opacity = "0";
+
                         backBtn.classList.add("hidden");
                     } else {
                         backBtn.classList.remove("hidden");
+                        backBtn.style.translate = "none";
+                        backBtn.style.opacity = "1";
                     }
                 }
             };
@@ -210,6 +213,8 @@
                     return;
                 }
 
+                const logo = document.querySelector("section.logo");
+
                 if (e.currentTarget.classList.contains("menu-closed")) {
                     e.currentTarget.classList.remove("menu-closed");
                     e.currentTarget.classList.add("menu-open");
@@ -220,6 +225,7 @@
 
                     setTimeout(() => {
                         test.style.transform = "translateX(0)";
+                        logo.style.translate = "-27px";
                     }, 1);
 
                     setTimeout(() => {
@@ -233,6 +239,7 @@
 
                     test.style.transform = "translateX(100vw)";
                     menuIcon.style.opacity = "0";
+                    logo.style.translate = "0px";
 
                     setTimeout(() => {
                         menuIcon.innerHTML = `apps`;
