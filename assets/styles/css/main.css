@@ -1,20 +1,24 @@
 @font-face {
   font-family: "ObjectSans-Heavy";
-  src: url("/portfolio/assets/fonts/object-sans/ObjectSans-Heavy.otf");
+  src: url("/assets/fonts/object-sans/ObjectSans-Heavy.otf");
 }
+
 @font-face {
   font-family: "ObjectSans-Regular";
-  src: url("/portfolio/assets/fonts/object-sans/ObjectSans-Regular.otf");
+  src: url("/assets/fonts/object-sans/ObjectSans-Regular.otf");
 }
+
 @font-face {
   font-family: "PlusJakartaSans";
-  src: url("/portfolio/assets/fonts/plus-jakarta-sans/PlusJakartaSans-VariableFont_wght.ttf");
+  src: url("/assets/fonts/plus-jakarta-sans/PlusJakartaSans-VariableFont_wght.ttf");
 }
+
 @keyframes scroll {
   to {
     transform: translate(calc(-50% - 0.5rem));
   }
 }
+
 * {
   transition: 0.3s background ease-out, 0.3s color ease-out;
 }
@@ -24,9 +28,12 @@ body {
   overflow-x: hidden;
   cursor: none;
 }
-body a, body span {
+
+body a,
+body span {
   cursor: none;
 }
+
 body .cursor-dot {
   transition: 0.35s all;
   width: 25px;
@@ -60,12 +67,14 @@ header {
   box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.1254901961);
   transition: 0.25s all;
 }
+
 header .logo a {
   text-decoration: none;
   font-weight: 800;
   font-size: 24px;
 }
-header > nav > ul {
+
+header>nav>ul {
   margin: 0;
   padding: 0;
   list-style-type: none;
@@ -73,40 +82,50 @@ header > nav > ul {
   align-items: center;
   gap: 20px;
 }
-header > nav > ul > li {
+
+header>nav>ul>li {
   margin: 0;
   padding: 0;
 }
-header > nav > ul > li.drop-line {
+
+header>nav>ul>li.drop-line {
   margin-right: 15px;
 }
-header > nav > ul > li.drop-line a {
+
+header>nav>ul>li.drop-line a {
   text-decoration: none;
   font-weight: 800;
   font-size: 16px;
 }
-header > nav > ul > li.lang {
+
+header>nav>ul>li.lang {
   font-weight: 800;
   font-size: 14px;
 }
-header > nav > ul > li.switch-modes {
+
+header>nav>ul>li.switch-modes {
   height: 20px;
 }
-header > nav > ul > li.switch-modes span {
+
+header>nav>ul>li.switch-modes span {
   font-size: 20px;
 }
-header > nav > ul > li.menu {
+
+header>nav>ul>li.menu {
   height: 35px;
 }
-header > nav > ul > li.menu span {
+
+header>nav>ul>li.menu span {
   font-size: 35px;
   transition: 0.3s all;
 }
-header > nav > ul > li.menu-closed div.menu-container {
+
+header>nav>ul>li.menu-closed div.menu-container {
   display: none;
   transition: 0.3s all;
 }
-header > nav > ul > li.menu-open div.menu-container {
+
+header>nav>ul>li.menu-open div.menu-container {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -120,7 +139,8 @@ header > nav > ul > li.menu-open div.menu-container {
   transition: 0.3s all;
   transform: translateX(100vw);
 }
-header > nav > ul > li.menu-open div.menu-container ul {
+
+header>nav>ul>li.menu-open div.menu-container ul {
   margin: 0;
   padding: 0;
   list-style-type: none;
@@ -128,12 +148,14 @@ header > nav > ul > li.menu-open div.menu-container ul {
   display: flex;
   flex-direction: column;
 }
-header > nav > ul > li.menu-open div.menu-container ul li {
+
+header>nav>ul>li.menu-open div.menu-container ul li {
   gap: 30px;
   padding: 0;
   margin: 0;
 }
-header > nav > ul > li.menu-open div.menu-container ul li a {
+
+header>nav>ul>li.menu-open div.menu-container ul li a {
   font-family: "ObjectSans-Heavy";
   text-decoration: none;
   font-size: 72px;
@@ -143,9 +165,13 @@ header > nav > ul > li.menu-open div.menu-container ul li a {
   background: #FFFFFF;
   color: #222222;
 }
-.light-mode header a, .light-mode header span, .light-mode header .lang {
+
+.light-mode header a,
+.light-mode header span,
+.light-mode header .lang {
   color: #222222;
 }
+
 .light-mode header div.menu-container {
   background: #FFF;
 }
@@ -154,9 +180,13 @@ header > nav > ul > li.menu-open div.menu-container ul li a {
   background: #111;
   color: #FFFFFF;
 }
-.dark-mode header a, .dark-mode header span, .dark-mode header .lang {
+
+.dark-mode header a,
+.dark-mode header span,
+.dark-mode header .lang {
   color: #FFFFFF;
 }
+
 .dark-mode header div.menu-container {
   background: #111;
 }
@@ -166,9 +196,13 @@ header.dark {
   color: #FFFFFF;
   box-shadow: none;
 }
-header.dark a, header.dark span, header.dark .lang {
+
+header.dark a,
+header.dark span,
+header.dark .lang {
   color: #FFFFFF;
 }
+
 header.dark div.menu-container {
   background: #111;
 }
@@ -184,12 +218,14 @@ header.init {
   display: flex;
   height: 100vh;
 }
+
 #hero .text {
   overflow: hidden;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
+
 #hero .text .bg-text {
   margin-bottom: 300px;
   font-family: "ObjectSans-Regular";
@@ -199,6 +235,7 @@ header.init {
   animation: scroll 60s forwards linear infinite;
   transition: none;
 }
+
 #hero .text .bg-text ul {
   margin: 0;
   padding: 0;
@@ -208,6 +245,7 @@ header.init {
   gap: 40px;
   transition: none;
 }
+
 #hero .text .front-text {
   font-family: "ObjectSans-Heavy";
   font-size: 120px;
@@ -219,9 +257,11 @@ header.init {
 .light-mode #hero {
   background: #FFFFFF;
 }
+
 .light-mode #hero .bg-text {
   color: rgba(0, 0, 0, 0.1019607843);
 }
+
 .light-mode #hero .front-text {
   color: #222222;
 }
@@ -229,9 +269,11 @@ header.init {
 .dark-mode #hero {
   background: #111;
 }
+
 .dark-mode #hero .bg-text {
   color: rgba(255, 255, 255, 0.1019607843);
 }
+
 .dark-mode #hero .front-text {
   color: #FFFFFF;
 }
@@ -243,9 +285,11 @@ header.init {
   font-weight: 800;
   word-spacing: 4px;
 }
+
 #separator1 .scroller {
   transition: none;
 }
+
 #separator1 .scroller ul {
   margin: 0;
   padding: 0;
@@ -255,12 +299,15 @@ header.init {
   gap: 0 20px;
   transition: none;
 }
+
 #separator1 .scroller ul li {
   transition: none;
 }
+
 #separator1 .scroller:first-child {
   animation: scroll 200s forwards linear infinite normal;
 }
+
 #separator1 .scroller:last-child {
   animation: scroll 200s forwards linear infinite reverse;
 }
@@ -272,9 +319,11 @@ header.init {
   font-weight: 800;
   word-spacing: 4px;
 }
+
 #separator2 .scroller {
   transition: 0.3s all ease;
 }
+
 #separator2 .scroller ul {
   margin: 0;
   padding: 0;
@@ -284,19 +333,23 @@ header.init {
   gap: 0 20px;
   transition: 0.3s all ease;
 }
+
 #separator2 .scroller:first-child {
   animation: scroll 200s forwards linear infinite reverse;
 }
+
 #separator2 .scroller:last-child {
   animation: scroll 200s forwards linear infinite normal;
 }
 
-.light-mode #separator1, .light-mode #separator2 {
+.light-mode #separator1,
+.light-mode #separator2 {
   background: #FFFFFF;
   color: rgba(0, 0, 0, 0.1019607843);
 }
 
-.dark-mode #separator1, .dark-mode #separator2 {
+.dark-mode #separator1,
+.dark-mode #separator2 {
   background: #111;
   color: rgba(255, 255, 255, 0.1019607843);
 }
@@ -309,17 +362,20 @@ header.init {
   gap: 80px;
   max-width: 1780px;
 }
-#about > section {
+
+#about>section {
   display: flex;
   flex-direction: row;
 }
-#about > section > section.col-1 {
+
+#about>section>section.col-1 {
   flex: 4;
   font-size: 80px;
   font-family: "ObjectSans-Heavy";
   line-height: 1;
 }
-#about > section > section.col-2 {
+
+#about>section>section.col-2 {
   flex: 6;
   font-size: 20px;
   font-family: "PlusJakartaSans";
@@ -329,43 +385,52 @@ header.init {
 .light-mode #about {
   background: #FFFFFF;
 }
-.light-mode #about > section {
+
+.light-mode #about>section {
   color: #222222;
 }
-.light-mode #about > section > section.col-2 {
+
+.light-mode #about>section>section.col-2 {
   color: #444;
 }
 
 .dark-mode #about {
   background: #111;
 }
-.dark-mode #about > section {
+
+.dark-mode #about>section {
   color: #FFFFFF;
 }
-.dark-mode #about > section > section.col-2 {
+
+.dark-mode #about>section>section.col-2 {
   color: #eee;
 }
 
 #projects {
   padding: 100px 70px;
 }
+
 #projects.projects-page {
   padding: 200px 70px 100px 70px;
 }
+
 #projects h2 {
   font-family: "ObjectSans-Heavy";
   font-size: 80px;
   margin: 0;
 }
+
 #projects .projects {
   margin-top: 100px;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 100px 40px;
 }
+
 #projects .projects .project {
   text-decoration: none;
 }
+
 #projects .projects .project img {
   box-shadow: 3px 0px 8px 0px rgba(0, 0, 0, 0.1254901961);
   border-radius: 24px;
@@ -373,20 +438,24 @@ header.init {
   width: 100%;
   object-fit: cover;
 }
+
 #projects .projects .project .info {
   margin: 20px 24px;
 }
+
 #projects .projects .project .info .type {
   font-family: "PlusJakartaSans";
   font-weight: 500;
   font-size: 12px;
   text-transform: uppercase;
 }
+
 #projects .projects .project .info .name {
   font-family: "ObjectSans-Heavy";
   font-size: 36px;
   font-weight: 700;
 }
+
 #projects .see-more {
   font-weight: 800;
   font-family: "ObjectSans-Heavy";
@@ -397,6 +466,7 @@ header.init {
   text-decoration: none;
   width: fit-content;
 }
+
 #projects .see-more span {
   font-size: 50px;
   margin-left: 10px;
@@ -406,12 +476,15 @@ header.init {
 .light-mode #projects {
   background: #FFFFFF;
 }
+
 .light-mode #projects h2 {
   color: #222222;
 }
+
 .light-mode #projects .projects .project {
   color: #222222;
 }
+
 .light-mode #projects .see-more {
   color: #222222;
 }
@@ -419,12 +492,15 @@ header.init {
 .dark-mode #projects {
   background: #111;
 }
+
 .dark-mode #projects h2 {
   color: #FFFFFF;
 }
+
 .dark-mode #projects .projects .project {
   color: #FFFFFF;
 }
+
 .dark-mode #projects .see-more {
   color: #FFFFFF;
 }
@@ -441,19 +517,23 @@ header.init {
   justify-content: center;
   padding: 0 70px;
 }
+
 #footer .text {
   color: #FFFFFF;
 }
+
 #footer .text h2 {
   margin: 0;
   font-family: "ObjectSans-Heavy";
   font-size: 80px;
 }
+
 #footer .text p {
   margin: 0;
   font-family: "PlusJakartaSans";
   font-size: 30px;
 }
+
 #footer .text a {
   font-weight: 800;
   font-family: "ObjectSans-Heavy";
@@ -465,6 +545,7 @@ header.init {
   width: fit-content;
   color: #FFFFFF;
 }
+
 #footer .text a span {
   font-size: 50px;
   margin-left: 10px;
@@ -475,13 +556,15 @@ header.init {
   display: flex;
   flex-direction: column;
 }
+
 #project-content .centered-content {
   display: flex;
   flex-direction: column;
   max-width: 1400px;
   padding: 0 calc((100vw - 1400px) / 2);
 }
-#project-content .centered-content > img {
+
+#project-content .centered-content>img {
   margin: auto;
   width: 1400px;
   height: 700px;
@@ -489,67 +572,83 @@ header.init {
   border-radius: 0 0 48px 48px;
   box-shadow: 3px 0px 8px 0px rgba(0, 0, 0, 0.1254901961);
 }
+
 #project-content .info {
   margin: 20px 0;
 }
+
 #project-content .info h1 {
   font-family: "ObjectSans-Heavy";
   font-size: 64px;
   margin: 50px 0 20px 0;
 }
-#project-content .info > .separator {
+
+#project-content .info>.separator {
   border-top: 1px solid #222;
   width: 100%;
   height: 1px;
   display: block;
 }
+
 #project-content .info .row {
   margin: 30px 0;
   display: flex;
   flex-direction: row;
   gap: 100px;
 }
+
 #project-content .info .row .desc {
   flex: 1;
   font-size: 20px;
   font-family: "PlusJakartaSans";
   font-weight: 400;
 }
+
 #project-content .info .row .more {
   flex: 1;
   transition: none !important;
 }
+
 #project-content .info .row .more table {
   transition: none !important;
 }
+
 #project-content .info .row .more table tbody {
   transition: none !important;
 }
+
 #project-content .info .row .more table tbody tr {
   transition: none !important;
 }
+
 #project-content .info .row .more table tbody tr td {
   transition: none !important;
 }
+
 #project-content .info .row .more table tbody tr td.separator {
   width: 30px;
 }
+
 #project-content .info .row .more table tbody tr td:first-child {
   font-family: "ObjectSans-Heavy";
   font-size: 20px;
 }
+
 #project-content .info .row .more table tbody tr td:last-child {
   font-family: "PlusJakartaSans";
   font-size: 16px;
 }
+
 #project-content .info .row .more table tbody tr.separator {
   height: 5px;
 }
+
 #project-content .gallery {
   width: max-content;
   transition: 0.3s all;
   margin: 0 0 0 calc((100vw - 1400px) / 2);
 }
+
 #project-content .gallery .sticky {
   position: sticky;
   top: 0;
@@ -559,6 +658,7 @@ header.init {
   align-items: center;
   gap: 80px;
 }
+
 #project-content .gallery .sticky img {
   width: 1400px;
   height: 80vh;
@@ -570,12 +670,15 @@ header.init {
 .light-mode #project-content {
   background: #FFFFFF;
 }
+
 .light-mode #project-content .info {
   color: #222222;
 }
+
 .light-mode #project-content .info .row .desc {
   color: #222222;
 }
+
 .light-mode #project-content .info .row .more table td {
   color: #222222;
 }
@@ -583,12 +686,15 @@ header.init {
 .dark-mode #project-content {
   background: #111;
 }
+
 .dark-mode #project-content .info {
   color: #FFFFFF;
 }
+
 .dark-mode #project-content .info .row .desc {
   color: #FFFFFF;
 }
+
 .dark-mode #project-content .info .row .more table td {
   color: #FFFFFF;
 }
