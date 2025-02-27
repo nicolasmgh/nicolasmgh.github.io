@@ -238,10 +238,13 @@
                     menuIcon.style.opacity = "0";
 
                     setTimeout(() => {
-                        menuIcon.innerHTML = `apps`;
-                        menuIcon.style.opacity = "1";
                         handleBackBtn("closing");
                         logo.style.translate = "0px";
+                    }, 50);
+
+                    setTimeout(() => {
+                        menuIcon.innerHTML = `apps`;
+                        menuIcon.style.opacity = "1";
                     }, 150);
 
                     setTimeout(() => {
