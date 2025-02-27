@@ -61,7 +61,7 @@ header {
   transition: 0.25s all;
 }
 header .logo {
-  transition: 0.4s all;
+  transition: 0.25s all;
 }
 header .logo a {
   text-decoration: none;
