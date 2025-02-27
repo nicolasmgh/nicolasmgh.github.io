@@ -1,8 +1,8 @@
-<html lang="en">
+<html lang="es">
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Nicolas Godoy Hassan</title>
+        <title>ngh - Portfolio</title>
 
         <!-- material icons -->
         <link
@@ -18,34 +18,34 @@
         </style>
 
         <!-- styles -->
-        <link rel="stylesheet" href="../../../assets/styles/css/main.css" />
+        <link rel="stylesheet" href="/assets/styles/css/main.css" />
 
         <!-- GSAP -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/gsap.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/ScrollTrigger.min.js"></script>
     </head>
 
-    <body class="dark-mode vsc-initialized">
+    <body class="light-mode vsc-initialized">
         <div class="cursor-dot"></div>
 
-        <header>
+        <header class="init">
             <!-- logo -->
             <section class="logo hoverable">
-                <a href="\portfolio">xtgrn</a>
+                <a href="\">ngh</a>
             </section>
 
             <!-- barra de navegacion -->
             <nav>
                 <ul>
                     <li class="drop-line">
-                        <a href="#" class="hoverable">CONTACTO</a>
+                        <a href="/contact/" class="hoverable">CONTACTO</a>
                     </li>
 
                     <li class="lang hoverable">ES</li>
 
                     <li class="switch-modes hoverable">
                         <span class="material-symbols-outlined">
-                            dark_mode
+                            light_mode
                         </span>
                     </li>
 
@@ -54,20 +54,22 @@
                         <div class="menu-container not-hoverable">
                             <ul class="not-hoverable">
                                 <li class="not-hoverable">
-                                    <a class="hoverable" href="\portfolio/"
-                                        >HOME</a
-                                    >
+                                    <a class="hoverable" href="/">HOME</a>
                                 </li>
                                 <li class="not-hoverable">
-                                    <a class="hoverable" href="\portfolio/work/"
+                                    <a class="hoverable" href="/work/"
                                         >PROYECTOS</a
                                     >
                                 </li>
                                 <li class="not-hoverable">
-                                    <a class="hoverable" href="#">CONTACTO</a>
+                                    <a class="hoverable" href="/contact/"
+                                        >CONTACTO</a
+                                    >
                                 </li>
                                 <li class="not-hoverable">
-                                    <a class="hoverable" href="#"
+                                    <a
+                                        class="hoverable"
+                                        href="/assets/pdf/cv.pdf"
                                         >DESCARGAR CV</a
                                     >
                                 </li>
@@ -147,7 +149,7 @@
                         left: `${posX}px`,
                         top: `${posY}px`,
                     },
-                    { duration: 500, fill: "forwards" }
+                    { duration: 150, fill: "forwards" }
                 );
             });
 
