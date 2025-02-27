@@ -240,13 +240,13 @@
                     setTimeout(() => {
                         menuIcon.innerHTML = `apps`;
                         menuIcon.style.opacity = "1";
+                        handleBackBtn("closing");
                     }, 150);
 
                     setTimeout(() => {
                         logo.style.translate = "0px";
                         target.classList.remove("menu-open");
                         target.classList.add("menu-closed");
-                        handleBackBtn("closing");
                     }, 300);
                 }
             });
