@@ -220,6 +220,50 @@
             });
         </script>
 
+        <a id="back" href="#">
+            <span class="material-symbols-outlined icon">
+                arrow_back_ios_new
+            </span>
+            <span class="text">Volver</span>
+        </a>
+        <style>
+            #back {
+                position: absolute;
+                left: 130px;
+                right: 0;
+                top: 140px;
+                font-family: "Plus Jakarta Sans";
+            }
+
+            a {
+                text-decoration: none;
+                color: #555;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+            }
+            span.icon {
+                margin-right: 10px;
+                padding: 8px;
+                background: #f6f6f6;
+                border-radius: 8px;
+                font-size: 16px;
+                font-variation-settings: "wght" 600;
+                color: #888;
+            }
+            span.text {
+                font-weight: 500;
+                font-size: 16px;
+                color: #555;
+            }
+        </style>
+
+        <script>
+            document.querySelector("#back").addEventListener("click", () => {
+                history.back();
+            });
+        </script>
+
         <section id="project-content">
             <section class="centered-content">
                 <img src="/assets\images\projects_portrait/eest3.jpg" alt="" />
@@ -285,6 +329,38 @@
                     },
                 });
             });
+        </script>
+
+        <script>
+            const checkInitHeader = () => {
+                if (window.scrollY <= 10) {
+                    document.querySelector("header").classList.add("init");
+                } else {
+                    document.querySelector("header").classList.remove("init");
+                }
+            };
+
+            window.addEventListener("scroll", function () {
+                // Verificar si el usuario está cerca del final del documento
+                if (
+                    window.innerHeight + window.scrollY >=
+                    document.body.offsetHeight - 10
+                ) {
+                    document.querySelector("header").classList.add("dark");
+                    // document.querySelector("#projects").classList.add("dark");
+
+                    // Puedes realizar acciones aquí cuando llegas al final del documento
+                } else {
+                    document.querySelector("header").classList.remove("dark");
+                    // document
+                    //     .querySelector("#projects")
+                    //     .classList.remove("dark");
+                }
+
+                checkInitHeader();
+            });
+
+            window.addEventListener("DOMContentLoaded", checkInitHeader);
         </script>
     </body>
 </html>
