@@ -188,6 +188,15 @@
         <script>
             const menu = document.querySelector(".menu");
             const menuIcon = menu.querySelector("span");
+            let backBtn = document.querySelector("#back");
+
+            const handleBackBtn = () => {
+                if (backBtn) {
+                    backBtn.classList.add("hidden");
+                } else {
+                    backBtn.classList.remove("hidden");
+                }
+            };
 
             menu.addEventListener("click", (e) => {
                 const test = e.currentTarget.children[1];
@@ -199,6 +208,8 @@
                 if (e.currentTarget.classList.contains("menu-closed")) {
                     e.currentTarget.classList.remove("menu-closed");
                     e.currentTarget.classList.add("menu-open");
+
+                    handleBackBtn();
 
                     menuIcon.style.opacity = "0";
 
@@ -212,6 +223,8 @@
                     }, 150);
                 } else {
                     const target = e.currentTarget;
+
+                    handleBackBtn();
 
                     test.style.transform = "translateX(100vw)";
                     menuIcon.style.opacity = "0";
@@ -228,6 +241,7 @@
                 }
             });
         </script>
+
         <style>
             #back {
                 font-family: "Plus Jakarta Sans";
@@ -259,6 +273,10 @@
 
             header.dark a#back span.icon {
                 background: #222;
+            }
+
+            header a#back span.hidden {
+                display: none;
             }
 
             span.text {

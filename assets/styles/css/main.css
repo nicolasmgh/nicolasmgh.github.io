@@ -176,7 +176,7 @@ header.dark div.menu-container {
 header.init {
   margin: 15px 70px;
   border-radius: none;
-  box-shadow: none;
+  box-shadow: 0;
   background: transparent;
 }
 
