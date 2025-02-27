@@ -189,13 +189,17 @@
             const menu = document.querySelector(".menu");
             const menuIcon = menu.querySelector("span");
 
-            const handleBackBtn = () => {
+            const handleBackBtn = (e) => {
                 let backBtn = document.querySelector("#back");
+                console.log("concha de la perra");
+                console.log(backBtn);
 
                 if (backBtn) {
-                    backBtn.classList.add("hidden");
-                } else {
-                    backBtn.classList.remove("hidden");
+                    if (e == "opening") {
+                        backBtn.classList.add("hidden");
+                    } else {
+                        backBtn.classList.remove("hidden");
+                    }
                 }
             };
 
@@ -210,7 +214,7 @@
                     e.currentTarget.classList.remove("menu-closed");
                     e.currentTarget.classList.add("menu-open");
 
-                    handleBackBtn();
+                    handleBackBtn("opening");
 
                     menuIcon.style.opacity = "0";
 
@@ -225,7 +229,7 @@
                 } else {
                     const target = e.currentTarget;
 
-                    handleBackBtn();
+                    handleBackBtn("closing");
 
                     test.style.transform = "translateX(100vw)";
                     menuIcon.style.opacity = "0";
@@ -276,7 +280,7 @@
                 background: #222;
             }
 
-            header a#back span.hidden {
+            header a#back.hidden {
                 display: none;
             }
 
