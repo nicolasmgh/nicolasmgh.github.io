@@ -190,12 +190,31 @@
             const menu = document.querySelector(".menu");
             const menuIcon = menu.querySelector("span");
 
+            const handleBackBtn = (e) => {
+                let backBtn = document.querySelector("#back");
+
+                if (backBtn) {
+                    if (e == "opening") {
+                        backBtn.style.translate = "-100px";
+                        backBtn.style.opacity = "0";
+
+                        backBtn.classList.add("hidden");
+                    } else {
+                        backBtn.classList.remove("hidden");
+                        backBtn.style.translate = "none";
+                        backBtn.style.opacity = "1";
+                    }
+                }
+            };
+
             menu.addEventListener("click", (e) => {
                 const test = e.currentTarget.children[1];
 
                 if (e.target.tagName == "DIV") {
                     return;
                 }
+
+                const logo = document.querySelector("section.logo");
 
                 if (e.currentTarget.classList.contains("menu-closed")) {
                     e.currentTarget.classList.remove("menu-closed");
@@ -208,14 +227,21 @@
                     }, 1);
 
                     setTimeout(() => {
+                        logo.style.translate = "-20px";
                         menuIcon.innerHTML = `close`;
                         menuIcon.style.opacity = "1";
+                        handleBackBtn("opening");
                     }, 150);
                 } else {
                     const target = e.currentTarget;
 
                     test.style.transform = "translateX(100vw)";
                     menuIcon.style.opacity = "0";
+
+                    setTimeout(() => {
+                        handleBackBtn("closing");
+                        logo.style.translate = "0px";
+                    }, 25);
 
                     setTimeout(() => {
                         menuIcon.innerHTML = `apps`;
@@ -248,6 +274,7 @@
                 display: flex;
                 flex-direction: row;
                 align-items: center;
+                transition: 0.25s all;
             }
             header a#back span.icon {
                 margin-right: 10px;
@@ -258,6 +285,15 @@
                 font-variation-settings: "wght" 600;
                 color: #655a78;
             }
+
+            header.dark a#back span.icon {
+                background: #222;
+            }
+
+            header a#back.hidden {
+                display: none;
+            }
+
             span.text {
                 font-weight: 500;
                 font-size: 16px;
@@ -265,7 +301,7 @@
             }
 
             .dark-mode header a#back span.icon {
-                background: #444;
+                background: #222;
                 color: #756492;
             }
 

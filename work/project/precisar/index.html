@@ -185,50 +185,75 @@
             });
         </script>
 
-        <script>
-            const menu = document.querySelector(".menu");
-            const menuIcon = menu.querySelector("span");
+<script>
+    const menu = document.querySelector(".menu");
+    const menuIcon = menu.querySelector("span");
 
-            menu.addEventListener("click", (e) => {
-                const test = e.currentTarget.children[1];
+    const handleBackBtn = (e) => {
+        let backBtn = document.querySelector("#back");
 
-                if (e.target.tagName == "DIV") {
-                    return;
-                }
+        if (backBtn) {
+            if (e == "opening") {
+                backBtn.style.translate = "-100px";
+                backBtn.style.opacity = "0";
 
-                if (e.currentTarget.classList.contains("menu-closed")) {
-                    e.currentTarget.classList.remove("menu-closed");
-                    e.currentTarget.classList.add("menu-open");
+                backBtn.classList.add("hidden");
+            } else {
+                backBtn.classList.remove("hidden");
+                backBtn.style.translate = "none";
+                backBtn.style.opacity = "1";
+            }
+        }
+    };
 
-                    menuIcon.style.opacity = "0";
+    menu.addEventListener("click", (e) => {
+        const test = e.currentTarget.children[1];
 
-                    setTimeout(() => {
-                        test.style.transform = "translateX(0)";
-                    }, 1);
+        if (e.target.tagName == "DIV") {
+            return;
+        }
 
-                    setTimeout(() => {
-                        menuIcon.innerHTML = `close`;
-                        menuIcon.style.opacity = "1";
-                    }, 150);
-                } else {
-                    const target = e.currentTarget;
+        const logo = document.querySelector("section.logo");
 
-                    test.style.transform = "translateX(100vw)";
-                    menuIcon.style.opacity = "0";
+        if (e.currentTarget.classList.contains("menu-closed")) {
+            e.currentTarget.classList.remove("menu-closed");
+            e.currentTarget.classList.add("menu-open");
 
-                    setTimeout(() => {
-                        menuIcon.innerHTML = `apps`;
-                        menuIcon.style.opacity = "1";
-                    }, 150);
+            menuIcon.style.opacity = "0";
 
-                    setTimeout(() => {
-                        target.classList.remove("menu-open");
-                        target.classList.add("menu-closed");
-                    }, 300);
-                }
-            });
-        </script>
+            setTimeout(() => {
+                test.style.transform = "translateX(0)";
+            }, 1);
 
+            setTimeout(() => {
+                logo.style.translate = "-20px";
+                menuIcon.innerHTML = `close`;
+                menuIcon.style.opacity = "1";
+                handleBackBtn("opening");
+            }, 150);
+        } else {
+            const target = e.currentTarget;
+
+            test.style.transform = "translateX(100vw)";
+            menuIcon.style.opacity = "0";
+
+            setTimeout(() => {
+                handleBackBtn("closing");
+                logo.style.translate = "0px";
+            }, 25);
+
+            setTimeout(() => {
+                menuIcon.innerHTML = `apps`;
+                menuIcon.style.opacity = "1";
+            }, 150);
+
+            setTimeout(() => {
+                target.classList.remove("menu-open");
+                target.classList.add("menu-closed");
+            }, 300);
+        }
+    });
+</script>
 
 <style>
     #back {
@@ -248,6 +273,7 @@
         display: flex;
         flex-direction: row;
         align-items: center;
+        transition: 0.25s all;
     }
     header a#back span.icon {
         margin-right: 10px;
@@ -258,6 +284,15 @@
         font-variation-settings: "wght" 600;
         color: #655a78;
     }
+
+    header.dark a#back span.icon {
+        background: #222;
+    }
+
+    header a#back.hidden {
+        display: none;
+    }
+
     span.text {
         font-weight: 500;
         font-size: 16px;
@@ -265,7 +300,7 @@
     }
 
     .dark-mode header a#back span.icon {
-        background: #444;
+        background: #222;
         color: #756492;
     }
 
