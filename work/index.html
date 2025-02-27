@@ -219,27 +219,23 @@
                     e.currentTarget.classList.remove("menu-closed");
                     e.currentTarget.classList.add("menu-open");
 
-                    handleBackBtn("opening");
-
                     menuIcon.style.opacity = "0";
 
                     setTimeout(() => {
                         test.style.transform = "translateX(0)";
-                        logo.style.translate = "-27px";
                     }, 1);
 
                     setTimeout(() => {
+                        logo.style.translate = "-27px";
                         menuIcon.innerHTML = `close`;
                         menuIcon.style.opacity = "1";
+                        handleBackBtn("opening");
                     }, 150);
                 } else {
                     const target = e.currentTarget;
 
-                    handleBackBtn("closing");
-
                     test.style.transform = "translateX(100vw)";
                     menuIcon.style.opacity = "0";
-                    logo.style.translate = "0px";
 
                     setTimeout(() => {
                         menuIcon.innerHTML = `apps`;
@@ -247,8 +243,10 @@
                     }, 150);
 
                     setTimeout(() => {
+                        logo.style.translate = "0px";
                         target.classList.remove("menu-open");
                         target.classList.add("menu-closed");
+                        handleBackBtn("closing");
                     }, 300);
                 }
             });
@@ -272,7 +270,7 @@
                 display: flex;
                 flex-direction: row;
                 align-items: center;
-                transition: .25s all;   
+                transition: 0.25s all;
             }
             header a#back span.icon {
                 margin-right: 10px;
